@@ -1,14 +1,15 @@
 
 const App = () => {
 
-  let x ='Amith';
-  let array =['user1','user2','user3','user4']
+  const btnClick =()=>{
+    console.log("clicked")
+
+  }
   return (
     <div>
-      {x}
-      {array.map((user)=>{
-        return <h2>{user}</h2>
-      })}
+      <button onClick={()=>{
+        btnClick()
+      }}>Click here</button>
     </div>
   )
  
