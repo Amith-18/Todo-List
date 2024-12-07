@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       <button onClick={()=>{btnClick()}}>Click here</button>
-      <FirstComponent data={x}/>
+      <FirstComponent data={x} fn={setx}/>
     </div>
   )
  
