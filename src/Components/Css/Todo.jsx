@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './Todo.css';
 import { useEffect } from 'react';
 import { useRef } from 'react';
+// import { TodoItem } from './TodoItem';
+import './TodoItem.css';
+
 
 let count = 0;
 export const Todo = () => {
@@ -32,7 +35,9 @@ export const Todo = () => {
         </div>
 
         <div className="todo-list">
-
+            {todos.map((item,index)=>{ 
+                return <TodoItem key={index} no={item.no} display={item.display} text={item.text}></TodoItem>
+            })}
         </div>
     </div>
   )
