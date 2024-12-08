@@ -1,9 +1,24 @@
 body { 
     font-family: 'Roboto', sans-serif; 
-    background: #f0f2f5; 
+    background: linear-gradient(135deg, #2d1a50, #5e2a7e); /* Deep purple gradient */
     display: flex; 
     justify-content: center; 
     align-items: center; 
     height: 100vh; 
     margin: 0; 
+    color: #fff; /* White text for contrast */
+    animation: gradientAnimation 10s ease infinite; /* Subtle background animation */
+}
+
+/* Background gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(135deg, #2d1a50, #5e2a7e);
+    }
+    50% {
+        background: linear-gradient(135deg, #5e2a7e, #9a4b8f);
+    }
+    100% {
+        background: linear-gradient(135deg, #2d1a50, #5e2a7e);
+    }
 }

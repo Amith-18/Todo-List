@@ -1,9 +1,9 @@
-import { Todo } from "./Components/Css/Todo"; // Ensure path is correct
+import { Todo } from "./Components/Css/Todo"; 
 
 const App = () => {
   return (
     <div>
-      <Todo /> {/* Using self-closing tag */}
+      <Todo /> 
     </div>
   );
 };

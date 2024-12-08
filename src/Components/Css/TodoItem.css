@@ -1,25 +1,77 @@
-.todo-item{
+
+
+/* General To-Do Item Styles */
+.todo-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 0px;
+    animation: fadeIn 0.3s ease; /* New items fade in */
+    transition: background-color 0.2s ease; /* Hover effect */
 }
 
-.todo-items-container{
+/* Hover Effect for To-Do Items */
+.todo-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Container for To-Do Text and Icons */
+.todo-items-container {
     display: flex;
 }
 
-.todo-items-text{
+/* To-Do Text Styles */
+.todo-items-text {
     padding-left: 16px;
     color: #404040;
     font-size: 22px;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth color and line-through transition */
 }
 
-.todoitems-cross-icon{
+/* Strikethrough Effect for Completed Items */
+.line-through {
+    text-decoration: line-through solid #adadad 3px;
+    color: #adadad;
+}
+
+/* Cross Icon (Delete Button) */
+.todoitems-cross-icon {
     cursor: pointer;
     padding-right: 25px;
+    transition: transform 0.2s ease, color 0.2s ease; /* Interactive hover animation */
 }
 
-.line-through{
-    text-decoration: line-through solid #adadad 3px;
+/* Hover Effect for Cross Icon */
+.todoitems-cross-icon:hover {
+    transform: scale(1.2); /* Slight zoom-in on hover */
+    color: red; /* Highlight the icon in red */
+}
+
+/* Fade-In Animation for New Items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-Out Animation for Deleting Items */
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Apply Slide-Out Animation to Items Being Deleted */
+.todo-item.deleting {
+    animation: slideOut 0.3s ease forwards;
 }
