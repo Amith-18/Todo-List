@@ -46,7 +46,7 @@ export const TodoItem = ({ no, display, text, setTodos }) => {
   }
   return (
     <div className="todo-item">
-      <div className="todo-items-container" onClick={()=>{toggle(no)}}>
+      <div className={`todo-items-container ${display}`} onClick={()=>{toggle(no)}}>
         {display ===""?<img src={not_tick} alt="Not Completed" />: <img src={tick} alt="Completed" />}      
         <div className="todo-items-text">{text}</div>
       </div>
