@@ -25,7 +25,8 @@ export const Todo = () => {
         localStorage.setItem('todos', JSON.stringify(todos))
         }, 100);
     }, [todos]);
-    
+
+  
     return (
         <div className='todo'>
             <div className="todo-header">To-Do List</div>
