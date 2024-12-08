@@ -12,10 +12,12 @@ export const Todo = () => {
     const add = () => {
         setTodos([...todos, { no: count++, text: inputRef.current.value, display: "" }]);
         inputRef.current.value = "";
+        localStorage.setItem('todos_count',count);
     }
 
     useEffect(()=>{
         setTodos(JSON.parse(localStorage.getItem("todos")))
+        count = localStorage.getItem('todos_count')
     },[])
 
     // Save todos to localStorage whenever they change
@@ -37,7 +39,12 @@ export const Todo = () => {
 
             <div className="todo-list">
                 {todos.map((item, index) => (
-                    <TodoItem key={index} no={item.no} display={item.display} text={item.text} />
+                    <TodoItem 
+                    key={index} 
+                    setTodos={setTodos} 
+                    no={item.no} 
+                    display={item.display} 
+                    text={item.text} />
                 ))}
             </div>
         </div>
